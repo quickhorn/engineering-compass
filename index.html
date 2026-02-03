@@ -1,22 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Derick Grey | Engineering Leader & .NET/JS Developer</title>
+    <meta name="description" content="Derick Grey - Engineering Leader, .NET/JS Developer, and People Empowerer. 15+ years building high-performing engineering teams." />
+    <meta name="author" content="Derick Grey" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Derick Grey | Engineering Leader" />
+    <meta property="og:description" content="Engineering Leader, .NET/JS Developer, and People Empowerer. Seeking Engineering Manager roles." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:site" content="@derickgrey" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <script>
+      // Set dark mode by default before page renders to prevent flash
+      if (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
 
   <body>
