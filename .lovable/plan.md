@@ -112,4 +112,3 @@
 - Mobile responsiveness review
 - Performance optimization
 - Launch!
-
