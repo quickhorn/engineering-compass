@@ -3,7 +3,6 @@ import { ArrowRight, Users, Calendar, TrendingUp, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const stats = [
   {
@@ -41,7 +40,7 @@ const featuredLinks = [
   },
   {
     title: "Current Work",
-    description: "Fractional CTO roles and open source contributions",
+    description: "Fractional Technical Co-founder Development",
     path: "/current-work",
   },
 ];
@@ -58,63 +57,47 @@ const Index = () => {
         </div>
 
         <div className="container">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Left: Text Content */}
-            <div className="text-center lg:text-left">
-              {/* Availability Badge */}
-              <div className="mb-8 flex justify-center lg:justify-start animate-fade-in">
-                <AvailabilityBadge />
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                <span className="text-gradient">Engineering Leader</span>
-                <br />
-                <span className="text-foreground">.NET/JS Developer</span>
-                <br />
-                <span className="text-muted-foreground">People Empowerer</span>
-              </h1>
-
-              {/* Tagline */}
-              <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                I build high-performing engineering teams and the systems that support them. 
-                From hands-on coding to strategic leadership, I bridge the gap between 
-                technical excellence and business outcomes.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <Button asChild size="lg" className="glow-primary">
-                  <Link to="/experience">
-                    View Experience
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">Get in Touch</Link>
-                </Button>
-              </div>
+          <div className="mx-auto max-w-4xl text-center">
+            {/* Availability Badge */}
+            <div className="mb-8 flex justify-center animate-fade-in">
+              <AvailabilityBadge />
             </div>
 
-            {/* Right: Profile Photo */}
-            <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="relative">
-                {/* Decorative ring */}
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 blur-xl" />
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-accent to-primary opacity-30" />
-                
-                {/* Avatar */}
-                <Avatar className="relative h-64 w-64 border-4 border-background shadow-2xl md:h-80 md:w-80">
-                  <AvatarImage 
-                    src="/placeholder.svg" 
-                    alt="Derick Grey - Engineering Leader"
-                    className="object-cover"
-                  />
-                  <AvatarFallback className="bg-gradient-to-br from-primary/10 to-accent/10 text-6xl font-bold text-primary">
-                    DG
-                  </AvatarFallback>
-                </Avatar>
-              </div>
+            {/* Main Headline */}
+            <h1
+              className="mb-6 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl animate-fade-in"
+              style={{ animationDelay: "0.1s" }}
+            >
+              <span className="text-gradient">Engineering Leader</span>
+              <br />
+              <span className="text-foreground">.NET/JS Developer</span>
+              <br />
+              <span className="text-muted-foreground">People Empowerer</span>
+            </h1>
+
+            {/* Tagline */}
+            <p
+              className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              I build high-performing engineering teams and the systems that support them. From hands-on coding to
+              strategic leadership, I bridge the gap between technical excellence and business outcomes.
+            </p>
+
+            {/* CTA Buttons */}
+            <div
+              className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <Button asChild size="lg" className="glow-primary">
+                <Link to="/experience">
+                  View Experience
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/contact">Get in Touch</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -125,15 +108,13 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {stats.map((stat, index) => (
-              <div 
-                key={stat.label} 
+              <div
+                key={stat.label}
                 className="flex flex-col items-center text-center animate-fade-in"
                 style={{ animationDelay: `${0.4 + index * 0.1}s` }}
               >
                 <stat.icon className="mb-2 h-6 w-6 text-primary" />
-                <span className="font-mono text-3xl font-bold text-foreground md:text-4xl">
-                  {stat.value}
-                </span>
+                <span className="font-mono text-3xl font-bold text-foreground md:text-4xl">{stat.value}</span>
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
               </div>
             ))}
@@ -151,8 +132,8 @@ const Index = () => {
 
           <div className="grid gap-6 md:grid-cols-3">
             {featuredLinks.map((link, index) => (
-              <Link 
-                key={link.path} 
+              <Link
+                key={link.path}
                 to={link.path}
                 className="group animate-fade-in"
                 style={{ animationDelay: `${0.1 + index * 0.1}s` }}
@@ -162,9 +143,7 @@ const Index = () => {
                     <h3 className="mb-2 font-mono text-lg font-semibold group-hover:text-primary transition-colors">
                       {link.title}
                     </h3>
-                    <p className="mb-4 flex-grow text-sm text-muted-foreground">
-                      {link.description}
-                    </p>
+                    <p className="mb-4 flex-grow text-sm text-muted-foreground">{link.description}</p>
                     <div className="flex items-center text-sm font-medium text-primary">
                       Explore
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -189,7 +168,7 @@ const Index = () => {
             </div>
             <pre className="text-sm text-muted-foreground overflow-x-auto">
               <code>
-{`interface LeadershipPhilosophy {
+                {`interface LeadershipPhilosophy {
   radicalCandor: true;
   inclusion: "non-negotiable";
   systemsThinking: "always";
