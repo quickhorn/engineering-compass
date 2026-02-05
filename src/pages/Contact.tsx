@@ -111,6 +111,57 @@
        </div>
  
        <div className="grid gap-12 lg:grid-cols-2">
+         {/* Direct Contact Options */}
+         <div className="space-y-8">
+           <div>
+             <h2 className="mb-6 text-2xl font-bold">Direct Contact</h2>
+             <p className="mb-8 text-muted-foreground">
+               Prefer a more direct approach? Connect with me on these platforms.
+             </p>
+ 
+             <div className="space-y-4">
+               {socialLinks.map((link) => (
+                 <a
+                   key={link.name}
+                   href={link.href}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-4 rounded-lg border border-border/50 bg-card/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-card/50"
+                 >
+                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                     <link.icon className="h-5 w-5" />
+                   </div>
+                   <div>
+                     <p className="font-medium">{link.name}</p>
+                     <p className="text-sm text-muted-foreground">{link.label}</p>
+                   </div>
+                 </a>
+               ))}
+             </div>
+           </div>
+ 
+           {/* Calendar Booking Placeholder */}
+           <Card className="border-dashed border-border/50 bg-card/20">
+             <CardContent className="flex flex-col items-center justify-center py-8 text-center">
+               <p className="mb-2 font-mono text-sm text-muted-foreground">
+                 // calendar_booking
+               </p>
+               <p className="text-sm text-muted-foreground">
+                 Prefer to schedule a call? Calendar booking coming soon.
+               </p>
+             </CardContent>
+           </Card>
+ 
+           {/* Response Time Note */}
+           <div className="rounded-lg border border-border/50 bg-gradient-to-br from-primary/5 to-accent/5 p-6">
+             <p className="font-mono text-sm text-primary">// response_time</p>
+             <p className="mt-2 text-sm text-muted-foreground">
+               I typically respond within <span className="font-medium text-foreground">24-48 hours</span>. 
+               For urgent opportunities, feel free to reach out via LinkedIn for a quicker response.
+             </p>
+           </div>
+         </div>
+ 
          {/* Contact Form */}
          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
            <CardHeader>
@@ -237,57 +288,6 @@
              )}
            </CardContent>
          </Card>
- 
-         {/* Direct Contact Options */}
-         <div className="space-y-8">
-           <div>
-             <h2 className="mb-6 text-2xl font-bold">Direct Contact</h2>
-             <p className="mb-8 text-muted-foreground">
-               Prefer a more direct approach? Connect with me on these platforms.
-             </p>
- 
-             <div className="space-y-4">
-               {socialLinks.map((link) => (
-                 <a
-                   key={link.name}
-                   href={link.href}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center gap-4 rounded-lg border border-border/50 bg-card/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-card/50"
-                 >
-                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                     <link.icon className="h-5 w-5" />
-                   </div>
-                   <div>
-                     <p className="font-medium">{link.name}</p>
-                     <p className="text-sm text-muted-foreground">{link.label}</p>
-                   </div>
-                 </a>
-               ))}
-             </div>
-           </div>
- 
-           {/* Calendar Booking Placeholder */}
-           <Card className="border-dashed border-border/50 bg-card/20">
-             <CardContent className="flex flex-col items-center justify-center py-8 text-center">
-               <p className="mb-2 font-mono text-sm text-muted-foreground">
-                 // calendar_booking
-               </p>
-               <p className="text-sm text-muted-foreground">
-                 Prefer to schedule a call? Calendar booking coming soon.
-               </p>
-             </CardContent>
-           </Card>
- 
-           {/* Response Time Note */}
-           <div className="rounded-lg border border-border/50 bg-gradient-to-br from-primary/5 to-accent/5 p-6">
-             <p className="font-mono text-sm text-primary">// response_time</p>
-             <p className="mt-2 text-sm text-muted-foreground">
-               I typically respond within <span className="font-medium text-foreground">24-48 hours</span>. 
-               For urgent opportunities, feel free to reach out via LinkedIn for a quicker response.
-             </p>
-           </div>
-         </div>
        </div>
      </div>
    );
