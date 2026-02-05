@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     id: 2,
     role: "Engineering Advocate",
     company: "TheoremOne",
-    type: "Consulting Culture & Leadership",
+    type: "Culture & Leadership",
     icon: <Heart className="h-5 w-5" />,
     highlights: [
       "Engagement-focused role in the talent team, connecting with new hire developers on day one",
@@ -43,9 +43,9 @@ const experiences: Experience[] = [
   },
   {
     id: 3,
-    role: "Engineering Manager",
+    role: "Engineering Manager / Director",
     company: "Medici Ventures",
-    type: "Startup Leadership & Architecture",
+    type: "Leadership & Architecture",
     icon: <Users className="h-5 w-5" />,
     highlights: [
       "Directly managed 12 engineers while architecting the organizational structure for scale",
@@ -60,7 +60,7 @@ const experiences: Experience[] = [
     id: 4,
     role: "Backend / Systems Developer",
     company: "Academy Mortgage",
-    type: "Platform Engineering",
+    type: "Financial Platform Engineering",
     icon: <Code2 className="h-5 w-5" />,
     highlights: [
       "Built core platform infrastructure and APIs powering mortgage processing systems",
