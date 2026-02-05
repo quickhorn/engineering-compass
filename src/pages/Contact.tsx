@@ -10,6 +10,7 @@
  import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
  import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
  import { useToast } from "@/hooks/use-toast";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
  
  const contactSchema = z.object({
    name: z
@@ -97,16 +98,34 @@
    return (
      <div className="container py-16 md:py-24">
        {/* Page Header */}
-       <div className="mb-16 max-w-3xl">
-         <p className="mb-2 font-mono text-sm text-primary">// let's_connect</p>
-         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-           Get in <span className="text-gradient">Touch</span>
-         </h1>
-         <p className="text-lg text-muted-foreground">
-           Looking for an engineering leader who builds great teams? Let's talk.
-         </p>
-         <div className="mt-4">
-           <AvailabilityBadge />
+        <div className="mb-16 flex flex-col items-start gap-8 md:flex-row md:items-center">
+          {/* Candid Photo */}
+          <div className="relative shrink-0 animate-fade-in">
+            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-lg" />
+            <Avatar className="relative h-32 w-32 rounded-2xl border-2 border-background shadow-xl md:h-40 md:w-40">
+              <AvatarImage 
+                src="/placeholder.svg" 
+                alt="Derick Grey - Let's connect!"
+                className="rounded-2xl object-cover"
+              />
+              <AvatarFallback className="rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 text-3xl font-bold text-primary">
+                😊
+              </AvatarFallback>
+            </Avatar>
+          </div>
+          
+          {/* Header Text */}
+          <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <p className="mb-2 font-mono text-sm text-primary">// let's_connect</p>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+              Get in <span className="text-gradient">Touch</span>
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Looking for an engineering leader who builds great teams? Let's talk.
+            </p>
+            <div className="mt-4">
+              <AvailabilityBadge />
+            </div>
          </div>
        </div>
  

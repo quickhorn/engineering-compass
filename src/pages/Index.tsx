@@ -3,6 +3,7 @@ import { ArrowRight, Users, Calendar, TrendingUp, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const stats = [
   {
@@ -57,39 +58,63 @@ const Index = () => {
         </div>
 
         <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            {/* Availability Badge */}
-            <div className="mb-8 flex justify-center animate-fade-in">
-              <AvailabilityBadge />
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Left: Text Content */}
+            <div className="text-center lg:text-left">
+              {/* Availability Badge */}
+              <div className="mb-8 flex justify-center lg:justify-start animate-fade-in">
+                <AvailabilityBadge />
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
+                <span className="text-gradient">Engineering Leader</span>
+                <br />
+                <span className="text-foreground">.NET/JS Developer</span>
+                <br />
+                <span className="text-muted-foreground">People Empowerer</span>
+              </h1>
+
+              {/* Tagline */}
+              <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                I build high-performing engineering teams and the systems that support them. 
+                From hands-on coding to strategic leadership, I bridge the gap between 
+                technical excellence and business outcomes.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                <Button asChild size="lg" className="glow-primary">
+                  <Link to="/experience">
+                    View Experience
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/contact">Get in Touch</Link>
+                </Button>
+              </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <span className="text-gradient">Engineering Leader</span>
-              <br />
-              <span className="text-foreground">.NET/JS Developer</span>
-              <br />
-              <span className="text-muted-foreground">People Empowerer</span>
-            </h1>
-
-            {/* Tagline */}
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              I build high-performing engineering teams and the systems that support them. 
-              From hands-on coding to strategic leadership, I bridge the gap between 
-              technical excellence and business outcomes.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <Button asChild size="lg" className="glow-primary">
-                <Link to="/experience">
-                  View Experience
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/contact">Get in Touch</Link>
-              </Button>
+            {/* Right: Profile Photo */}
+            <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="relative">
+                {/* Decorative ring */}
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 blur-xl" />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-accent to-primary opacity-30" />
+                
+                {/* Avatar */}
+                <Avatar className="relative h-64 w-64 border-4 border-background shadow-2xl md:h-80 md:w-80">
+                  <AvatarImage 
+                    src="/placeholder.svg" 
+                    alt="Derick Grey - Engineering Leader"
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-primary/10 to-accent/10 text-6xl font-bold text-primary">
+                    DG
+                  </AvatarFallback>
+                </Avatar>
+              </div>
             </div>
           </div>
         </div>
