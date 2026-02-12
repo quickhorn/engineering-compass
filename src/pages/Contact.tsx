@@ -1,4 +1,5 @@
  import { useState } from "react";
+import { usePageMeta } from "@/hooks/use-page-meta";
  import { useForm } from "react-hook-form";
  import { zodResolver } from "@hookform/resolvers/zod";
  import { z } from "zod";
@@ -58,8 +59,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
    },
  ];
  
- export default function Contact() {
-   const [isSubmitted, setIsSubmitted] = useState(false);
+export default function Contact() {
+  usePageMeta({
+    title: "Contact | Derick Grey",
+    description: "Get in touch with Derick Grey — open to Engineering Manager roles and fractional CTO engagements.",
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
    const [isSubmitting, setIsSubmitting] = useState(false);
    const { toast } = useToast();
  

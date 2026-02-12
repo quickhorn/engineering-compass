@@ -3,7 +3,8 @@ import { ArrowRight, Users, Calendar, TrendingUp, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
- import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const stats = [
   {
@@ -47,6 +48,11 @@ const featuredLinks = [
 ];
 
 const Index = () => {
+  usePageMeta({
+    title: "Derick Grey | Engineering Leader & .NET/JS Developer",
+    description: "Engineering Leader, .NET/JS Developer, and People Empowerer. 15+ years building high-performing engineering teams.",
+  });
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}

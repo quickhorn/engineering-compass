@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
 import { GitHubHeatmap } from "@/components/GitHubHeatmap";
 import { posts, categoryLabels } from "@/data/posts";
+import { usePageMeta } from "@/hooks/use-page-meta";
  
  const thoughtLeadership = [
    {
@@ -30,8 +31,13 @@ import { posts, categoryLabels } from "@/data/posts";
    },
  ];
  
- const CurrentWork = () => {
-   return (
+const CurrentWork = () => {
+  usePageMeta({
+    title: "Current Work | Derick Grey",
+    description: "Fractional CTO work, open source contributions, and recent writing on engineering leadership and AI-assisted development.",
+  });
+
+  return (
      <div className="flex flex-col">
        {/* Hero Section */}
        <section className="relative overflow-hidden py-16 md:py-24">

@@ -2,10 +2,17 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug, categoryLabels } from "@/data/posts";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
+
+  usePageMeta({
+    title: post ? `${post.title} | Derick Grey` : "Post Not Found | Derick Grey",
+    description: post?.excerpt ?? "Blog post not found.",
+    ogType: "article",
+  });
 
   if (!post) {
     return (

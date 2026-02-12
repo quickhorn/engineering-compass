@@ -4,6 +4,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { posts, categoryLabels, type BlogCategory } from "@/data/posts";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const categories: Array<{ key: BlogCategory | "all"; label: string }> = [
   { key: "all", label: "All Posts" },
@@ -13,6 +14,11 @@ const categories: Array<{ key: BlogCategory | "all"; label: string }> = [
 ];
 
 const Blog = () => {
+  usePageMeta({
+    title: "Blog | Derick Grey",
+    description: "Leadership insights, technical deep-dives, and thoughts on AI-assisted engineering from Derick Grey.",
+  });
+
   const [activeCategory, setActiveCategory] = useState<BlogCategory | "all">("all");
 
   const filtered =
