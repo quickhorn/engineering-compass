@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Rocket, Building2, Heart, Code2 } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 interface Experience {
   id: number;
@@ -85,6 +86,11 @@ const experiences: Experience[] = [
 ];
 
 export default function Experience() {
+  usePageMeta({
+    title: "Experience & Impact | Derick Grey",
+    description: "15+ years of engineering leadership — building teams, shipping products, and empowering developers across startups and enterprise.",
+  });
+
   return (
     <div className="container py-16 md:py-24">
       {/* Page Header */}
