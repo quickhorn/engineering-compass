@@ -51,17 +51,17 @@ export const GitHubHeatmap = () => {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+    <div className="grid gap-6 lg:grid-cols-[1fr_2fr]">
       {/* Heatmap */}
       <div className="rounded-lg border border-border/50 bg-card/50 p-4">
         <div className="overflow-x-auto pb-2">
-          <div className="flex gap-[3px]" style={{ minWidth: "max-content" }}>
+          <div className="flex gap-[3px] flex-wrap" style={{ minWidth: "max-content" }}>
             {weeks.map((week, wi) => (
               <div key={wi} className="flex flex-col gap-[3px]">
                 {week.map((day, di) => (
                   <div
                     key={`${wi}-${di}`}
-                    className={`h-[10px] w-[10px] rounded-sm ${levelColors[day.level]} transition-colors hover:ring-1 hover:ring-primary/50`}
+                    className={`h-[9px] w-[9px] rounded-sm ${levelColors[day.level]} transition-colors hover:ring-1 hover:ring-primary/50`}
                     title={`${day.date}: ${day.count} contributions`}
                   />
                 ))}
@@ -70,12 +70,12 @@ export const GitHubHeatmap = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-          <span className="font-mono">{total.toLocaleString()} contributions in the last 3 months</span>
+        <div className="mt-3 flex flex-col gap-2 text-xs text-muted-foreground">
+          <span className="font-mono">{total.toLocaleString()} contributions in 3 months</span>
           <div className="flex items-center gap-1">
             <span className="mr-1">Less</span>
             {levelColors.map((c, i) => (
-              <div key={i} className={`h-[10px] w-[10px] rounded-sm ${c}`} />
+              <div key={i} className={`h-[9px] w-[9px] rounded-sm ${c}`} />
             ))}
             <span className="ml-1">More</span>
           </div>
@@ -83,9 +83,9 @@ export const GitHubHeatmap = () => {
       </div>
 
       {/* Recent Repos */}
-      <div className="rounded-lg border border-border/50 bg-card/50 p-4">
+      <div className="rounded-lg border border-border/50 bg-card/50 p-4 overflow-hidden">
         <h3 className="mb-3 font-mono text-sm font-semibold text-foreground">Recent Projects</h3>
-        <ul className="space-y-3">
+        <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {repos.map((repo) => (
             <li key={repo.name}>
               <a
