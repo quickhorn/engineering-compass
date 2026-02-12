@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Calendar, TrendingUp, Code } from "lucide-react";
+import headshotImg from "@/assets/headshot.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
@@ -120,9 +121,9 @@ const Index = () => {
                  
                  {/* Avatar */}
                  <Avatar className="relative h-64 w-64 border-4 border-background shadow-2xl md:h-80 md:w-80">
-                   <AvatarImage 
-                     src="/placeholder.svg" 
-                     alt="Derick Grey - Engineering Leader"
+                    <AvatarImage 
+                      src={headshotImg} 
+                      alt="Derick Grey - Engineering Leader"
                      className="object-cover"
                    />
                    <AvatarFallback className="bg-gradient-to-br from-primary/20 to-accent/20 text-6xl font-bold text-primary">
