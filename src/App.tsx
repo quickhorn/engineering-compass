@@ -8,7 +8,9 @@ import { Header, Footer } from "@/components/layout";
 import Index from "./pages/Index";
 import Experience from "./pages/Experience";
  import Contact from "./pages/Contact";
- import CurrentWork from "./pages/CurrentWork";
+import CurrentWork from "./pages/CurrentWork";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,7 +28,9 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/experience" element={<Experience />} />
-                 <Route path="/current-work" element={<CurrentWork />} />
+                <Route path="/current-work" element={<CurrentWork />} />
+                 <Route path="/blog" element={<Blog />} />
+                 <Route path="/blog/:slug" element={<BlogPost />} />
                  <Route path="/contact" element={<Contact />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
