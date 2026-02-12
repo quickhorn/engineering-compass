@@ -1,4 +1,5 @@
  import { useState } from "react";
+import headshotImg from "@/assets/headshot.jpg";
 import { usePageMeta } from "@/hooks/use-page-meta";
  import { useForm } from "react-hook-form";
  import { zodResolver } from "@hookform/resolvers/zod";
@@ -109,9 +110,9 @@ export default function Contact() {
           <div className="relative shrink-0 animate-fade-in">
             <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-lg" />
             <Avatar className="relative h-32 w-32 rounded-2xl border-2 border-background shadow-xl md:h-40 md:w-40">
-              <AvatarImage 
-                src="/placeholder.svg" 
-                alt="Derick Grey - Let's connect!"
+               <AvatarImage 
+                 src={headshotImg} 
+                 alt="Derick Grey - Let's connect!"
                 className="rounded-2xl object-cover"
               />
               <AvatarFallback className="rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 text-3xl font-bold text-primary">
