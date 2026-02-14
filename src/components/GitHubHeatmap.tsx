@@ -2,7 +2,8 @@ import { useMemo, useEffect, useState, useRef } from "react";
 import { ExternalLink, GitCommit, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getContributions, getRecentRepos, type ContributionDay, type RepoSummary } from "@/lib/github";
+import { getContributions, getRecentRepos } from "@/lib/github";
+import type { ContributionDay, RepoSummary } from "@/shared/github-types";
 
 const levelColors = [
   "bg-muted/50",
