@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, ChevronRight, FileText, Users, Lightbulb, PenLine } from "lucide-react";
+import { ExternalLink, Github, FileText, Users, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AvailabilityBadge } from "@/components/layout/AvailabilityBadge";
 import { GitHubHeatmap } from "@/components/GitHubHeatmap";
-import { posts, categoryLabels } from "@/data/posts";
+
 import { usePageMeta } from "@/hooks/use-page-meta";
  
  const thoughtLeadership = [
@@ -62,40 +62,6 @@ const CurrentWork = () => {
            </div>
          </div>
        </section>
- 
-        {/* Recent Blog Posts Section */}
-        <section className="border-y border-border/50 bg-card/30 py-12">
-          <div className="container">
-            <div className="mb-6 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <PenLine className="h-5 w-5 text-primary" />
-                <h2 className="font-mono text-lg font-semibold">Recent Writing</h2>
-              </div>
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/blog" className="flex items-center gap-1 text-sm">
-                  View all posts
-                  <ChevronRight className="h-3 w-3" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {posts.slice(0, 3).map((post) => (
-                <Link key={post.slug} to={`/blog/${post.slug}`} className="group">
-                  <Card className="h-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-                    <CardContent className="p-4">
-                      <span className="text-xs font-mono text-primary">{categoryLabels[post.category]}</span>
-                      <h3 className="mt-1 text-sm font-semibold leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
  
        {/* GitHub Contributions Section */}
        <section className="py-12">
