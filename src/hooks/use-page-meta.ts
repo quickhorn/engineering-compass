@@ -6,6 +6,7 @@ interface PageMetaOptions {
   ogTitle?: string;
   ogDescription?: string;
   ogType?: string;
+  ogImage?: string;
 }
 
 /**
@@ -19,6 +20,7 @@ export function usePageMeta({
   ogTitle,
   ogDescription,
   ogType = "website",
+  ogImage,
 }: PageMetaOptions) {
   useEffect(() => {
     // Title
@@ -31,7 +33,11 @@ export function usePageMeta({
     setMetaProperty("og:title", ogTitle ?? title);
     setMetaProperty("og:description", ogDescription ?? description);
     setMetaProperty("og:type", ogType);
-  }, [title, description, ogTitle, ogDescription, ogType]);
+    if (ogImage) {
+      setMetaProperty("og:image", ogImage);
+      setMeta("twitter:image", ogImage);
+    }
+  }, [title, description, ogTitle, ogDescription, ogType, ogImage]);
 }
 
 function setMeta(name: string, content: string) {

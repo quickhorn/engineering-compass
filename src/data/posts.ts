@@ -41,17 +41,21 @@ function buildPosts(): BlogPost[] {
     const filename = filepath.split("/").pop() ?? "";
     const slug = filename.replace(/\.md$/, "");
 
-    const { attributes, body } = fm<PostFrontmatter>(raw);
+    try {
+      const { attributes, body } = fm<PostFrontmatter>(raw);
 
-    result.push({
-      slug,
-      title: attributes.title ?? slug,
-      category: (attributes.category as BlogCategory) ?? "code",
-      excerpt: attributes.excerpt ?? "",
-      content: body,
-      date: attributes.date ?? "",
-      readingTime: attributes.readingTime ?? "",
-    });
+      result.push({
+        slug,
+        title: attributes.title ?? slug,
+        category: (attributes.category as BlogCategory) ?? "code",
+        excerpt: attributes.excerpt ?? "",
+        content: body,
+        date: attributes.date ?? "",
+        readingTime: attributes.readingTime ?? "",
+      });
+    } catch (e) {
+      console.warn(`Failed to parse blog post "${slug}", skipping:`, e);
+    }
   }
 
   return result;
@@ -63,8 +67,4 @@ export const posts: BlogPost[] = buildPosts();
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug);
-}
-
-export function getPostsByCategory(category: BlogCategory): BlogPost[] {
-  return posts.filter((p) => p.category === category);
 }

@@ -14,6 +14,7 @@ const BlogPost = () => {
     title: post ? `${post.title} | Derick Grey` : "Post Not Found | Derick Grey",
     description: post?.excerpt ?? "Blog post not found.",
     ogType: "article",
+    ogImage: "/og-image.png",
   });
 
   if (!post) {
