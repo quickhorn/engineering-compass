@@ -1,28 +1,6 @@
-// GitHub API service — uses VITE_GITHUB_PAT when available, falls back to mock data.
+// GitHub API service — calls Vercel serverless proxy, falls back to mock data.
 
-const GITHUB_USERNAME = "quickhorn";
-const PAT = import.meta.env.VITE_GITHUB_PAT as string | undefined;
-
-const headers: HeadersInit = PAT
-  ? { Authorization: `Bearer ${PAT}`, Accept: "application/vnd.github+json" }
-  : { Accept: "application/vnd.github+json" };
-
-// ── Types ──────────────────────────────────────────────────────────
-
-export interface ContributionDay {
-  date: string; // YYYY-MM-DD
-  count: number;
-  level: 0 | 1 | 2 | 3 | 4;
-}
-
-export interface RepoSummary {
-  name: string;
-  language: string | null;
-  description: string | null;
-  commits: number;
-  url: string;
-  updatedAt: string;
-}
+import type { ContributionDay, RepoSummary } from "@/shared/github-types";
 
 // ── Helpers ────────────────────────────────────────────────────────
 
@@ -75,97 +53,13 @@ function generateMockRepos(): RepoSummary[] {
   ];
 }
 
-// ── Real API fetchers ─────────────────────────────────────────────
-
-async function fetchContributions(): Promise<ContributionDay[]> {
-  // GitHub GraphQL is needed for contribution calendar — requires PAT with read:user scope
-  const since = threeMonthsAgo().toISOString();
-  const query = `
-    query {
-      user(login: "${GITHUB_USERNAME}") {
-        contributionsCollection(from: "${since}") {
-          contributionCalendar {
-            weeks {
-              contributionDays {
-                date
-                contributionCount
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const res = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers,
-    body: JSON.stringify({ query }),
-  });
-
-  if (!res.ok) throw new Error(`GitHub GraphQL error: ${res.status}`);
-  const json = await res.json();
-  const weeks = json.data.user.contributionsCollection.contributionCalendar.weeks;
-
-  const days: ContributionDay[] = [];
-  for (const week of weeks) {
-    for (const day of week.contributionDays) {
-      days.push({
-        date: day.date,
-        count: day.contributionCount,
-        level: toLevel(day.contributionCount),
-      });
-    }
-  }
-  return days;
-}
-
-async function fetchRepos(): Promise<RepoSummary[]> {
-  const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=10&type=all`,
-    { headers }
-  );
-  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-  const repos = await res.json();
-
-  // Fetch commit counts for recent repos
-  const results: RepoSummary[] = [];
-  for (const repo of repos.slice(0, 5)) {
-    let commits = 0;
-    try {
-      const contribRes = await fetch(
-        `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/contributors`,
-        { headers }
-      );
-      if (contribRes.ok) {
-        const contributors = await contribRes.json();
-        const me = contributors.find(
-          (c: any) => c.login.toLowerCase() === GITHUB_USERNAME.toLowerCase()
-        );
-        commits = me?.contributions ?? 0;
-      }
-    } catch {
-      // ignore
-    }
-
-    results.push({
-      name: repo.name,
-      language: repo.language,
-      description: repo.description,
-      commits,
-      url: repo.html_url,
-      updatedAt: repo.pushed_at?.split("T")[0] ?? "",
-    });
-  }
-  return results;
-}
-
 // ── Public API ────────────────────────────────────────────────────
 
 export async function getContributions(): Promise<ContributionDay[]> {
-  if (!PAT) return generateMockContributions();
   try {
-    return await fetchContributions();
+    const res = await fetch("/api/github/contributions");
+    if (!res.ok) throw new Error(`API error: ${res.status}`);
+    return await res.json();
   } catch (e) {
     console.warn("GitHub contributions fetch failed, using mock data:", e);
     return generateMockContributions();
@@ -173,9 +67,10 @@ export async function getContributions(): Promise<ContributionDay[]> {
 }
 
 export async function getRecentRepos(): Promise<RepoSummary[]> {
-  if (!PAT) return generateMockRepos();
   try {
-    return await fetchRepos();
+    const res = await fetch("/api/github/repos");
+    if (!res.ok) throw new Error(`API error: ${res.status}`);
+    return await res.json();
   } catch (e) {
     console.warn("GitHub repos fetch failed, using mock data:", e);
     return generateMockRepos();
