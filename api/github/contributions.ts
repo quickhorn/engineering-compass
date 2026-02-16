@@ -22,10 +22,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     since.setMonth(since.getMonth() - 3);
     since.setHours(0, 0, 0, 0);
 
+    const now = new Date();
+
     const query = `
       query {
         user(login: "${GITHUB_USERNAME}") {
-          contributionsCollection(from: "${since.toISOString()}") {
+          contributionsCollection(from: "${since.toISOString()}", to: "${now.toISOString()}") {
             contributionCalendar {
               weeks {
                 contributionDays {
