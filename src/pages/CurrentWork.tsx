@@ -9,24 +9,24 @@ import { usePageMeta } from "@/hooks/use-page-meta";
  
  const thoughtLeadership = [
    {
-     title: "Building Engineering Cultures That Scale",
+     title: "Personal Spotlight: Combining Agility and DEI to Create a Culture of Kindness",
      source: "TheoremOne",
-     description: "How I developed an onboarding program that connected with every new developer on day one to instill ownership culture.",
-     link: "#",
+     description: "Kindness is the difficult process of impactful, humble feedback. Feedback requires cultural competence.",
+     link: "https://journal.theoremone.co/articles/dee-grey",
      icon: Users,
    },
    {
-     title: "The Pivot: From Corporate to Entrepreneur and Back",
-     source: "Personal",
-     description: "My journey from corporate engineering leadership to entrepreneurship and what I learned along the way.",
-     link: "#",
+     title: "Agile and DEI: A Singular-Circle Venn Diagram for Successful Systems Thinking",
+     source: "TheoremOne",
+     description: "The true indicator of a high performing team is systems thinking based psychological safety.",
+     link: "https://journal.theoremone.co/articles/agile-and-dei-a-singular-circle-venn-diagram-for-successful-systems-thinking",
      icon: Lightbulb,
    },
    {
-     title: "AI-Assisted Engineering: A Practical Guide",
+     title: "It's Time to Douse 'The Burning Platform",
      source: "Personal",
-     description: "How I integrate AI tools into my daily workflow to accelerate development without sacrificing quality.",
-     link: "#",
+     description: "How to innovate and inspire through growth and hope, instead of fear and pain.",
+     link: "https://medium.com/@dee_grey/its-time-to-douse-the-burning-platform-821cb1dfb909",
      icon: FileText,
    },
  ];
@@ -111,7 +111,7 @@ const CurrentWork = () => {
                      <span className="text-xs font-mono text-muted-foreground">{item.source}</span>
                    </div>
                    <CardTitle className="text-base leading-tight group-hover:text-primary transition-colors">
-                     {item.title}
+                     <a target="_blank" href={item.link}>{item.title}</a>
                    </CardTitle>
                  </CardHeader>
                  <CardContent>
@@ -119,7 +119,7 @@ const CurrentWork = () => {
                      {item.description}
                    </p>
                    <Button variant="ghost" size="sm" className="h-8 px-3 text-xs" asChild>
-                     <a href={item.link}>
+                     <a target="_blank" href={item.link}>
                        Read more
                        <ExternalLink className="ml-1 h-3 w-3" />
                      </a>
