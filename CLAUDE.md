@@ -18,6 +18,10 @@ Personal portfolio site for Derick Grey (engineering leader). Built with Vite + 
 | Run a single test | `npx vitest run src/test/example.test.ts` |
 | Preview prod build | `npm run preview` |
 
+## Blog Writing
+
+When writing, drafting, or reviewing blog posts, follow the rules in [BLOG_STYLE.md](./BLOG_STYLE.md).
+
 ## Learning Mode
 
 ### BEFORE WRITING CODE
