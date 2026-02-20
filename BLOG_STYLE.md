@@ -26,6 +26,7 @@ Derick's writing voice is **direct, opinionated, and personal**. He makes bold c
 - Write generic calls to action: "Did you like this post? Want more?" — just say what's coming next.
 - Use a preachy or lecturing tone. Derick shares what he's learned and what he's seen — he doesn't talk down.
 - Over-explain jargon that the target audience (engineering leaders, senior devs) would already know.
+- Use the em dash.
 
 ## Structure
 
