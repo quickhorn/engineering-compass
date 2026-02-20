@@ -20,7 +20,7 @@ I opened up [Copilot](https://github.com/features/copilot) in VSCode and gave it
 
 *"Instead of creating a plan, or writing it yourself, turn this project into a tutorial."*
 
-And it did. Copilot made assumptions about how many hours I'd be able to spend per day. It set up multiple stages, each one building on the last, each providing some level of value along the way. Instead of writing the code directly into my files, it showed it to me — and I typed it into the editor myself.
+And it did. Copilot made assumptions about how many hours I'd be able to spend per day. It set up multiple stages, each one building on the last, each providing some level of value along the way. Instead of writing the code directly into my files, it showed it to me...and I typed it into the editor myself.
 
 On the surface, this felt like learning.
 
