@@ -2,7 +2,7 @@
 title: "AI Isn't Just Changing Dev's Jobs"
 category: "ai"
 excerpt: "AI is reshaping the developer role from code producer to product maker — and managers need to evolve with them."
-date: "2026-02-16"
+date: "2026-02-10"
 readingTime: "5 min read"
 ---
 

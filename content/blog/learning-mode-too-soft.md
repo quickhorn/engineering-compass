@@ -2,7 +2,7 @@
 title: "Learning Mode: Too Soft"
 category: "ai"
 excerpt: "My first attempt at using AI as a teacher turned me into a transcriptionist. I needed to learn, not copy."
-date: "2026-02-10"
+date: "2026-02-16"
 readingTime: "5 min read"
 ---
 
