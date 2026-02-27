@@ -48,6 +48,6 @@ I needed more friction. So for my next project, I overcorrected.
 
 ## What's Next
 
-In the next post, I swing to the other extreme...Papa Bear mode...
+In the [next post](/blog/learning-mode-too-hard), I swing to the other extreme...Papa Bear mode...
 
 (to be continued...)

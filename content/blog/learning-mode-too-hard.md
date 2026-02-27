@@ -44,4 +44,4 @@ I needed to be challenged, but not abandoned.
 
 ## What's Next
 
-In the [final post](/blog/learning-mode-teaching-ai-to-teach), I find my Goldilocks mode. Six rules that turned Claude Code from a code generator into a patient engineering mentor. It's not just the right balance between the first two attempts. It's a fundamentally different relationship with AI.
+In the final post, I find my Goldilocks mode. Six rules that turned Claude Code from a code generator into a patient engineering mentor. It's not just the right balance between the first two attempts. It's a fundamentally different relationship with AI.
