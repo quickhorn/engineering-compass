@@ -2,7 +2,7 @@
 title: "Learning Mode: Too Hard"
 category: "ai"
 excerpt: "From Mama Bear to Papa Bear, I overcorrected from easy mode by going full self-directed. It was just standard development with a fancier search tool."
-date: "2026-02-26
+date: "2026-02-26"
 readingTime: "5 min read"
 ---
 
