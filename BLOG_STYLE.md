@@ -26,7 +26,7 @@ Derick's writing voice is **direct, opinionated, and personal**. He makes bold c
 - Write generic calls to action: "Did you like this post? Want more?" — just say what's coming next.
 - Use a preachy or lecturing tone. Derick shares what he's learned and what he's seen — he doesn't talk down.
 - Over-explain jargon that the target audience (engineering leaders, senior devs) would already know.
-- Use the em dash.
+- Use the em dash (`—`). Use ellipsis (`...`) for pauses and breaks instead.
 
 ## Structure
 
@@ -71,6 +71,16 @@ readingTime: "X min read"
 - Single blank line between paragraphs and sections. No double blank lines.
 - Break long paragraphs when the thought shifts — but don't fragment naturally flowing ideas into tiny paragraphs.
 - Filenames use lowercase kebab-case: `my-post-title.md`
+
+## Social Promotion (LinkedIn)
+
+When Derick asks for a LinkedIn intro or summary for a blog post:
+
+- **Pull directly from the blog's strongest paragraph.** Don't rewrite or craft a separate promotional blurb. The blog's own hook should do the work.
+- Add minimal framing only if the paragraph needs context to stand alone (e.g., "This is the first post in a three-part series about...").
+- End with a bare link to the post. No "read more at" or "link in comments."
+- No LinkedIn-isms: no "I'm excited to share", no "thrilled to announce", no hashtags, no tagging.
+- No emoji unless Derick specifically asks for them.
 
 ## Review Checklist
 
