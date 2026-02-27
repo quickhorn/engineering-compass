@@ -17,6 +17,9 @@ Derick's writing voice is **direct, opinionated, and personal**. He makes bold c
 - Use ellipsis (`...`) as a dramatic pause to let implications hang or create a beat before a punchline. "The explanations landed while I was in the flow...but afterwards..." — the reader fills in the gap. Don't overuse it, but don't avoid it either. It's a signature stylistic choice.
 - Extend metaphors. Don't name a metaphor and move on — inhabit it. If you introduce Goldilocks, put yourself in the house. If you use the homework analogy, land it with a specific, vivid punchline ("the only clear answer you had was your name"). Let the metaphor do real work.
 - Acknowledge nuance. Derick doesn't paint things as entirely good or entirely bad. Even when an approach failed overall, he credits what worked: "There were times when I recognized the app made assumptions...and I applied my own thinking." This honesty makes the criticism more credible.
+- Use parenthetical asides for humor and honesty. "(punn intended)", "(and later did)" — these add personality and break the fourth wall. They feel conversational, like a wink to the reader. Don't overdo them, but don't avoid them either.
+- Use scare quotes for sarcasm or skepticism. A more "helpful" search tool says more than a paragraph of explanation. Let the quotes do the work.
+- Brief self-deprecating honesty is welcome. "I am definitely still rusty." One sentence, move on. Don't dwell, just acknowledge reality. This builds trust with the reader.
 
 ### Don't
 

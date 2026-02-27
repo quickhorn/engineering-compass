@@ -24,11 +24,11 @@ The idea was that if I did the hard work of reading docs, understanding APIs, an
 
 It took me a week to understand Chrome extensions. I am definitely still rusty. 
 
-Windsurf was helpful as a guide — it gave me structured steps, pointed me to the right documentation, and helped me understand the manifest and content script architecture. But every time I hit a wall, I was on my own. And the walls came fast.
+Windsurf was helpful as a guide...it gave me structured steps, pointed me to the right documentation, and helped me understand the manifest and content script architecture. But every time I hit a wall, I was on my own. And the walls came fast.
 
 I got an initial button injected into the ChatGPT page. Then I hit ChatGPT's DOM — a React Single Page App that re-renders constantly, and reacts poorly to injected DOM elements (punn intended). I spent days on problems that an AI could have explained in thirty seconds (and later did).
 
-As I tried to rely less on the AI for explanations — so I'd "understand" — the velocity cratered. This wasn't augmented AI development, it was old-style development, just with a more "helpful" search tool. 
+As I tried to rely less on the AI for explanations...so I'd "understand" — the velocity cratered. This wasn't augmented AI development, it was old-style development, just with a more "helpful" search tool. 
 
 ## Papa Telling You to Figure It Out
 
