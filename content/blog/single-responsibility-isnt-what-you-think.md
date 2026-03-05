@@ -1,6 +1,6 @@
 ---
 title: "Single Responsibility Isn't What You Think It Is"
-category: "engineering"
+category: "code"
 excerpt: "We've been reading the Single Responsibility Principle wrong. It's not about what a class does. It's about who it serves."
 date: "2026-03-10"
 readingTime: "6 min read"
