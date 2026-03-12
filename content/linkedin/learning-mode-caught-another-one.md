@@ -150,7 +150,4 @@ Links referenced in this post:
 - Claude's Haiku model: https://docs.anthropic.com/en/docs/about-claude/models
 - PixiJS (WebGL rendering library): https://pixijs.com/
 
-
-## Image
-
  ![A stylized illustration of a constellation arranged in the shape of a bear against a dark, star-filled sky. Bright white stars are connected by thin glowing lines that form the same angular pattern as the original constellation, with several stars labeled A, B, C, D, and E. Overlaid on top of the connected stars is a luminous blue outline of a walking bear, with the constellation lines running through the bear’s head, back, legs, and tail to visually match the animal’s shape. The bear faces left with its head slightly lowered, while the stars and connecting lines remain clearly visible inside the outline.](../../public/bear-image.png "Constellation Bear")

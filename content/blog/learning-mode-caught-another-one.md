@@ -1,7 +1,7 @@
 ---
-title: "Learning Mode Caught Another One"
+title: "Drawing Constellations with Claude - And Learning Mode Shines Again"
 category: "ai"
-excerpt: "Learning Mode didn't just quiz me on my code. It forced Claude to review its own work three times before I ever saw the question."
+excerpt: "Building a visualization tool shows the value of learning mode, yet again...but with bears."
 date: "2026-03-11"
 readingTime: "7 min read"
 ---
@@ -87,6 +87,8 @@ Plotted:
 The best part about constellations is the ability to use your imagination. Do you see a bear with a head at A, feet at C and E? Or do you see a roaring bear, arms wide at A and E, a body represented by B, C and D.
 
 Here's what I saw...
+
+ ![A stylized illustration of a constellation arranged in the shape of a bear against a dark, star-filled sky. Bright white stars are connected by thin glowing lines that form the same angular pattern as the original constellation, with several stars labeled A, B, C, D, and E. Overlaid on top of the connected stars is a luminous blue outline of a walking bear, with the constellation lines running through the bear’s head, back, legs, and tail to visually match the animal’s shape. The bear faces left with its head slightly lowered, while the stars and connecting lines remain clearly visible inside the outline.](../../public/bear-image.png "Constellation Bear")
 
 This was absolutely awesome. The fact that we could send complex graphs and get a visual representation back was astounding. 
 
